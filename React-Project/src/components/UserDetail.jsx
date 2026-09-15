@@ -1,13 +1,12 @@
-
 import React from "react";
 
-function UserDetail({users , onClose }){
-    if(!user){
+function UserDetail({ user, onClose }) {
+    if (!user) {
         return null;
     }
-    return(
-        <>  <div className="max-w-md mx-auto mt-6 bg-white shadow-lg rounded-xl p-6 border border-gray-200">
 
+    return (
+        <div className="max-w-md mx-auto mt-6 bg-white shadow-lg rounded-xl p-6 border border-gray-200">
             <div className="flex justify-between items-center mb-5">
                 <h2 className="text-2xl font-bold text-gray-800">
                     User Details
@@ -19,47 +18,27 @@ function UserDetail({users , onClose }){
             </div>
 
             <div className="space-y-4">
-
                 <div>
-                    <p className="text-sm text-gray-500">
-                        Name
-                    </p>
-
+                    <p className="text-sm text-gray-500">Name</p>
                     <p className="text-lg font-semibold text-gray-800">
                         {user.name}
                     </p>
                 </div>
 
                 <div>
-                    <p className="text-sm text-gray-500">
-                        Email
-                    </p>
-
-                    <p className="text-gray-800">
-                        {user.email}
-                    </p>
+                    <p className="text-sm text-gray-500">Email</p>
+                    <p className="text-gray-800">{user.email}</p>
                 </div>
 
                 <div>
-                    <p className="text-sm text-gray-500">
-                        Phone
-                    </p>
-
-                    <p className="text-gray-800">
-                        {user.phone}
-                    </p>
+                    <p className="text-sm text-gray-500">Phone</p>
+                    <p className="text-gray-800">{user.phone}</p>
                 </div>
 
                 <div>
-                    <p className="text-sm text-gray-500">
-                        Website
-                    </p>
-
-                    <p className="text-gray-800">
-                        {user.website}
-                    </p>
+                    <p className="text-sm text-gray-500">Website</p>
+                    <p className="text-gray-800">{user.website}</p>
                 </div>
-
             </div>
 
             <button
@@ -68,8 +47,8 @@ function UserDetail({users , onClose }){
             >
                 Close
             </button>
-
         </div>
-        </>
-    )
-}export default UserDetail;
+    );
+}
+
+export default UserDetail;
