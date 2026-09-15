@@ -60,6 +60,7 @@ function App() {
             <Route path='/3rd' element={<ContextDashboard />} />
             <Route path='/' element={<Authentication />} /> */}
 
+            <Route path='/' element={<UserPage />} />
             <Route path='/User' element={<UserPage />} />
           </Routes>
         </BrowserRouter>
