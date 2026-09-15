@@ -1,11 +1,19 @@
 {
-  "devDependencies": {
-    "autoprefixer": "^10.5.4",
-    "postcss": "^8.5.26",
-    "tailwindcss": "^3.4.19"
+  "name": "react1",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm --prefix React-Project run dev",
+    "build": "npm --prefix React-Project run build",
+    "preview": "npm --prefix React-Project run preview"
   },
   "dependencies": {
     "axios": "^1.20.0",
     "react-hook-form": "^7.87.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.4",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^3.4.19"
   }
 }
