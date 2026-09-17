@@ -32,6 +32,15 @@ function UserForm({ onSubmit, editingUser, onCancel }) {
         }));
     };
 
+    const handlePhoneChange = (e) => {
+        const value = e.target.value.replace(/[^0-9+\-\s()]/g, "");
+
+        setFormData((previousData) => ({
+            ...previousData,
+            phone: value,
+        }));
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         onSubmit(formData);
@@ -79,11 +88,14 @@ function UserForm({ onSubmit, editingUser, onCancel }) {
                         Phone
                     </label>
                     <input
-                        type="tel"
+                        type="text"
                         name="phone"
                         value={formData.phone}
-                        onChange={handleChange}
+                        onChange={handlePhoneChange}
                         placeholder="Enter phone number"
+                        inputMode="tel"
+                        autoComplete="tel"
+                        maxLength={15}
                         className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-400"
                         required
                     />
