@@ -1,104 +1,79 @@
 import React from "react";
 
 function UserList({ users, onView, onEdit, onDelete }) {
-
     return (
         <div className="mt-8">
-
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            <h2 className="mb-4 text-xl font-bold text-gray-800 sm:mb-6 sm:text-2xl">
                 All Users
             </h2>
 
             {users.length === 0 ? (
-
-                <p className="text-gray-500">
-                    No users found.
-                </p>
-
+                <p className="text-gray-500">No users found.</p>
             ) : (
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
                     {users.map((user) => (
-
                         <div
                             key={user.id}
-                            className="bg-white rounded-xl shadow-md border border-gray-200 p-5 hover:shadow-xl transition duration-300"
+                            className="min-w-0 rounded-xl border border-gray-200 bg-white p-4 shadow-md transition duration-300 hover:shadow-xl sm:p-5"
                         >
-                            <div className="flex items-center gap-4 mb-4">
-
-                                <div className="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center text-xl font-bold">
-                                    {user.name.charAt(0)}
+                            <div className="mb-4 flex min-w-0 items-center gap-3 sm:gap-4">
+                                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue-500 text-lg font-bold text-white sm:h-12 sm:w-12 sm:text-xl">
+                                    {user.name?.charAt(0)?.toUpperCase()}
                                 </div>
 
-                                <div>
-                                    <h3 className="text-lg font-bold text-gray-800">
+                                <div className="min-w-0">
+                                    <h3 className="truncate text-base font-bold text-gray-800 sm:text-lg">
                                         {user.name}
                                     </h3>
-
                                     <p className="text-sm text-gray-500">
                                         User ID: {user.id}
                                     </p>
                                 </div>
-
                             </div>
-                            <div className="space-y-2 mb-5">
 
-                                <p className="text-gray-600">
-                                    <span className="font-semibold">
-                                        Email:
-                                    </span>{" "}
+                            <div className="mb-5 space-y-2 text-sm sm:text-base">
+                                <p className="break-words text-gray-600">
+                                    <span className="font-semibold">Email:</span>{" "}
                                     {user.email}
                                 </p>
 
-                                <p className="text-gray-600">
-                                    <span className="font-semibold">
-                                        Phone:
-                                    </span>{" "}
-                                    {user.phone}
+                                <p className="break-words text-gray-600">
+                                    <span className="font-semibold">Phone:</span>{" "}
+                                    {user.phone || "N/A"}
                                 </p>
 
-                                <p className="text-gray-600">
-                                    <span className="font-semibold">
-                                        Website:
-                                    </span>{" "}
-                                    {user.website}
+                                <p className="break-all text-gray-600">
+                                    <span className="font-semibold">Website:</span>{" "}
+                                    {user.website || "N/A"}
                                 </p>
-
                             </div>
-                            <div className="flex gap-2">
 
+                            <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
                                 <button
                                     onClick={() => onView(user.id)}
-                                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium transition"
+                                    className="w-full rounded-lg bg-blue-500 py-2.5 font-medium text-white transition hover:bg-blue-600"
                                 >
                                     View
                                 </button>
 
                                 <button
                                     onClick={() => onEdit(user)}
-                                    className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-lg font-medium transition"
+                                    className="w-full rounded-lg bg-yellow-500 py-2.5 font-medium text-white transition hover:bg-yellow-600"
                                 >
                                     Edit
                                 </button>
 
                                 <button
                                     onClick={() => onDelete(user.id)}
-                                    className="flex-1 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg font-medium transition"
+                                    className="w-full rounded-lg bg-red-500 py-2.5 font-medium text-white transition hover:bg-red-600"
                                 >
                                     Delete
                                 </button>
-
                             </div>
-
                         </div>
-
                     ))}
-
                 </div>
-
             )}
-
         </div>
     );
 }
