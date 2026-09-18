@@ -47,14 +47,14 @@ function UserForm({ onSubmit, editingUser, onCancel }) {
     };
 
     return (
-        <div className="max-w-md mx-auto bg-white shadow-lg rounded-xl p-6 border border-gray-200">
-            <h2 className="text-2xl font-bold text-gray-800 mb-5">
+        <div className="mx-auto w-full max-w-md rounded-xl border border-gray-200 bg-white p-4 shadow-lg sm:p-6">
+            <h2 className="mb-5 text-xl font-bold text-gray-800 sm:text-2xl">
                 {editingUser ? "Edit User" : "Add User"}
             </h2>
 
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="mb-2 block text-sm font-semibold text-gray-700">
                         Name
                     </label>
                     <input
@@ -63,13 +63,13 @@ function UserForm({ onSubmit, editingUser, onCancel }) {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="Enter name"
-                        className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-400"
+                        className="w-full min-w-0 rounded-lg border border-gray-300 px-3 py-2.5 outline-none focus:ring-2 focus:ring-blue-400 sm:px-4"
                         required
                     />
                 </div>
 
                 <div className="mb-4">
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="mb-2 block text-sm font-semibold text-gray-700">
                         Email
                     </label>
                     <input
@@ -78,13 +78,13 @@ function UserForm({ onSubmit, editingUser, onCancel }) {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="Enter email"
-                        className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-400"
+                        className="w-full min-w-0 rounded-lg border border-gray-300 px-3 py-2.5 outline-none focus:ring-2 focus:ring-blue-400 sm:px-4"
                         required
                     />
                 </div>
 
                 <div className="mb-5">
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="mb-2 block text-sm font-semibold text-gray-700">
                         Phone
                     </label>
                     <input
@@ -96,15 +96,15 @@ function UserForm({ onSubmit, editingUser, onCancel }) {
                         inputMode="tel"
                         autoComplete="tel"
                         maxLength={15}
-                        className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-400"
+                        className="w-full min-w-0 rounded-lg border border-gray-300 px-3 py-2.5 outline-none focus:ring-2 focus:ring-blue-400 sm:px-4"
                         required
                     />
                 </div>
 
-                <div className="flex gap-3">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                     <button
                         type="submit"
-                        className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition"
+                        className="w-full rounded-lg bg-blue-500 py-2.5 font-semibold text-white transition hover:bg-blue-600"
                     >
                         {editingUser ? "Update User" : "Add User"}
                     </button>
@@ -113,7 +113,7 @@ function UserForm({ onSubmit, editingUser, onCancel }) {
                         <button
                             type="button"
                             onClick={onCancel}
-                            className="flex-1 bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 rounded-lg transition"
+                            className="w-full rounded-lg bg-gray-500 py-2.5 font-semibold text-white transition hover:bg-gray-600"
                         >
                             Cancel
                         </button>
